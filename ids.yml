@@ -1,0 +1,38 @@
+name: siitdc
+
+  
+topology:
+  nodes:
+         
+    # Nokia SRL Linux funcionando como router
+    srl2:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:23.10.1
+      type: ixrd3
+      # startup-config: srlrt/config.json
+           
+    PC1:
+      kind: linux
+      image: docker.io/esanchezv/kaliipv6v2.1:latest
+      exec:
+      - ip -6 route del default dev eth0
+
+    PC2:
+      kind: linux
+      image: siit-dcv2:latest
+       
+
+    PC3:
+      kind: linux
+      image: docker.io/wbitt/network-multitool:extra
+      exec:
+      - ip -6 route del default dev eth0  
+
+    
+  links:
+    - endpoints: ["srl2:e1-1", "PC1:eth1"]
+    - endpoints: ["srl2:e1-2", "PC2:eth1"]
+    - endpoints: ["srl2:e1-3", "PC3:eth1"]
+    
+    
+     
