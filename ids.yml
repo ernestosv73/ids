@@ -48,7 +48,7 @@ topology:
 
     PC3:
       kind: linux
-      image: ubuntu:22.04
+      image: esanchezv/suricafilebeat:latest
       exec:
       - ip -6 route del default dev eth0
           
