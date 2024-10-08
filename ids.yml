@@ -16,13 +16,19 @@ topology:
       type: ixrd3
       startup-config: srlrt/config.json
            
-    PC1:
+    # ELK STACK
+    
+    elastic:
       kind: linux
-      image: docker.io/esanchezv/kaliipv6v2.1:latest
-      exec:
-      - ip -6 route del default dev eth0
-      
-        
+      #mgmt-ipv4: 172.22.22.10
+      image: docker.elastic.co/elasticsearch/elasticsearch:7.17.7
+      env:
+        node.name: es01
+        discovery.type: single-node
+        ES_JAVA_OPTS: "-Xms1g -Xmx1g"
+      ports:
+        - 9200:9200/tcp
+            
     PC2:
       kind: linux
       image: docker.io/esanchezv/kaliipv6v2.1:latest
@@ -31,12 +37,12 @@ topology:
 
     PC3:
       kind: linux
-      image: ghcr.io/hellt/network-multitool:latest
+      image: ubuntu:22.04
       exec:
       - ip -6 route del default dev eth0
           
   links:
     - endpoints: ["srl2:e1-1", "srl1:e1-1"]
-    - endpoints: ["PC1:eth1", "srl1:e1-2"]
+    - endpoints: ["elastic:eth1", "srl1:e1-2"]
     - endpoints: ["PC3:eth1", "srl1:e1-3"]
     - endpoints: ["PC2:eth1", "srl1:e1-4"]
