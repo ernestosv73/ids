@@ -49,7 +49,7 @@ topology:
 
     suricata:
       kind: linux
-      image: esanchezv/suricafilebeat:latest
+      image: esanchezv/suricatafilebeatv1:latest
       exec:
       - ip -6 route del default dev eth0
           
