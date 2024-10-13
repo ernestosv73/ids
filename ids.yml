@@ -44,6 +44,8 @@ topology:
     suricata:
       kind: linux
       image: esanchezv/suricatafilebeatv1:latest
+      binds:
+       - elks/suricata/local.rules:/var/lib/suricata/rules/local.rules
       exec:
       - ip -6 route del default dev eth0
       
