@@ -1,4 +1,4 @@
 alert ipv6 any any -> any any (msg:"ICMPv6 Destination Unreachable Message"; ip_proto:58; itype:1; icode:0; classtype:policy-violation; sid:1000002; rev:1;)
-alert ipv6 any any -> any any (msg:"ICMPv6 Flood RA"; ip_proto:58; itype:134; icode:0; threshold: type both, track by_src, count 100, seconds 30; classtype:policy-violation; sid:1000003; rev:1;)
-alert ipv6 any any -> any any (msg:"ICMPv6 Flood MLD RA"; ip_proto:58; itype:151; icode:15; threshold: type limit, track by_src, count 100, seconds 3; classtype:misc-activity; sid:1000004; rev:1;)
+alert ipv6 any any -> any any (msg:"ICMPv6 Flood RA"; ip_proto:58; itype:134; icode:0; threshold: type both, track by_dst, count 100, seconds 5; classtype:policy-violation; sid:1000003; rev:1;)
+alert ipv6 any any -> any any (msg:"ICMPv6 Flood MLD RA"; ip_proto:58; itype:151; icode:15; threshold: type limit, track by_src, count 100, seconds 3; classtype:policy-violation; sid:1000004; rev:1;)
 alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 Ping to multicast address ff02::1"; ip_proto:58; itype:128; icode:0; classtype:policy-violation; sid:1000005; rev:1;)
