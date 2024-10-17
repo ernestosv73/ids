@@ -2,4 +2,4 @@ alert ipv6 any any -> any any (msg:"ICMPv6 Destination Unreachable Message"; ip_
 alert ipv6 any any -> any any (msg:"ICMPv6 Flood RA"; ip_proto:58; itype:134; icode:0; threshold: type both, track by_dst, count 100, seconds 5; classtype:policy-violation; sid:1000003; rev:1;)
 alert ipv6 any any -> any any (msg:"ICMPv6 Flood MLD RA"; ip_proto:58; itype:151; icode:15; threshold: type both, track by_src, count 100, seconds 3; classtype:policy-violation; sid:1000004; rev:1;)
 alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 Ping to multicast address ff02::1"; ip_proto:58; itype:128; icode:0; classtype:policy-violation; sid:1000005; rev:1;)
-alert ipv6 any any -> any any (msg:"ICMPv6 Kill Router6"; ip_proto:58; itype:134; content:"|00 00 00 00|"; offset:8; depth:4; classtype:policy-violation; sid:1000006; rev:1;)
+alert ipv6 any any -> any any (msg:"ICMPv6 Kill Router6"; ip_proto:58; itype:134; content:"|00 00|"; offset:6; depth:2; classtype:policy-violation; sid:1000006; rev:1;)
