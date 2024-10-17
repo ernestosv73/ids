@@ -3,3 +3,4 @@ alert ipv6 any any -> any any (msg:"ICMPv6 Flood RA"; ip_proto:58; itype:134; ic
 alert ipv6 any any -> any any (msg:"ICMPv6 Flood MLD RA"; ip_proto:58; itype:151; icode:15; threshold: type both, track by_src, count 100, seconds 3; classtype:policy-violation; sid:1000004; rev:1;)
 alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 Ping to multicast address ff02::1"; ip_proto:58; itype:128; icode:0; classtype:policy-violation; sid:1000005; rev:1;)
 alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 Kill Router6"; ipv6.hdr; content:"|00 10|"; offset:4; depth:2; classtype:policy-violation; sid:1000006; rev:1;) 
+alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 Kill Router6 -FHD"; ipv6.hdr; content:"|01 40|"; offset:4; depth:2; classtype:policy-violation; sid:1000010; rev:1;)
