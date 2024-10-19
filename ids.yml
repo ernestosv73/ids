@@ -58,7 +58,7 @@ topology:
     
     PC2:
       kind: linux
-      image: blairy/nmap:latest
+      image: lapsiufcg/nmap:v0.1
       exec:
       - ip -6 route del default dev eth0  
    
