@@ -62,11 +62,11 @@ topology:
       exec:
       - ip -6 route del default dev eth0  
     
-    PCnmap:
-      kind: linux
-      image: lapsiufcg/nmap:v0.2
-      exec:
-      - ip -6 route del default dev eth0  
+    #PCnmap:
+    #  kind: linux
+    #  image: lapsiufcg/nmap:v0.2
+    #  exec:
+    #  - ip -6 route del default dev eth0  
    
           
   links:
@@ -79,7 +79,7 @@ topology:
       mtu: 1500
     - endpoints: ["PC1:eth1", "srl1:e1-5"]
       mtu: 1500
-    - endpoints: ["PCnmap:eth1", "srl1:e1-6"]
+    - endpoints: ["PC2:eth1", "srl1:e1-6"]
       mtu: 1500
-    - endpoints: ["PC2:eth1", "srl1:e1-7"]
-      mtu: 1500  
+    #- endpoints: ["PC2:eth1", "srl1:e1-7"]
+    #  mtu: 1500  
