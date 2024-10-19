@@ -70,3 +70,4 @@ topology:
     - endpoints: ["kibana:eth1", "srl1:e1-4"]
     - endpoints: ["PC1:eth1", "srl1:e1-5"]
     - endpoints: ["PC2:eth1", "srl1:e1-6"]
+      mtu:1500
