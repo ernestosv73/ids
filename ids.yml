@@ -26,6 +26,7 @@ topology:
         node.name: es01
         discovery.type: single-node
         xpack.security.enabled: "true"
+        xpack.security.audit.enabled: "true"
         ES_JAVA_OPTS: "-Xms1g -Xmx1g"
       ports:
         - 9200:9200/tcp
