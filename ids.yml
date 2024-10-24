@@ -59,7 +59,7 @@ topology:
 
     PC2:
       kind: linux
-      image: esanchezv/kaliipv6v2.1:v1
+      image: docker.io/esanchezv/kaliipv6v2.1:latest
       exec:
       - ip -6 route del default dev eth0  
     
