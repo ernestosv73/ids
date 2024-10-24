@@ -5,7 +5,7 @@ topology:
     # Nokia SRL Linux funcionando como dispositivo de capa 2
     srl1:
       kind: nokia_srlinux
-      image: ghcr.io/nokia/srlinux:24.7.2
+      image: ghcr.io/nokia/srlinux:23.10.1
       type: ixrd3
       startup-config: srlsw/config.json
       
