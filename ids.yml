@@ -69,6 +69,7 @@ topology:
       exec:
       - ip -6 route del default dev eth0
       - echo '0' > /proc/sys/net/ipv6/conf/eth1/accept_ra
+      - echo '0' > /proc/sys/net/ipv6/conf/eth1/autoconf
       - ip -6 addr add 2001:db8:aaaa:1::10/64 dev eth1
 
     PC4:
