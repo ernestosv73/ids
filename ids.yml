@@ -68,6 +68,12 @@ topology:
       image: bodane/exfil:latest
       exec:
       - ip -6 route del default dev eth0  
+
+    PC4:
+      kind: linux
+      image: bodane/exfil:latest
+      exec:
+      - ip -6 route del default dev eth0    
    
           
   links:
@@ -84,3 +90,5 @@ topology:
       mtu: 1500
     - endpoints: ["PC3:eth1", "srl1:e1-7"]
       mtu: 1500  
+    - endpoints: ["PC4:eth1", "srl1:e1-8"]
+      mtu: 1500    
