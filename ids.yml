@@ -65,13 +65,13 @@ topology:
     
     PC3:
       kind: linux
-      image: bodane/exfil:latest
+      image: bodane/exfil:v1
       exec:
       - ip -6 route del default dev eth0  
 
     PC4:
       kind: linux
-      image: bodane/exfil:latest
+      image: bodane/exfil:v1
       exec:
       - ip -6 route del default dev eth0    
    
