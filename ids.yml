@@ -72,7 +72,7 @@ topology:
       exec:
       - ip -6 route del default dev eth0
       - "sysctl -w net.ipv6.conf.eth1.accept_ra=0"
-      - ip -6 addr add 2001:db8:aaaa:1::10/64 dev eth1
+      - ip -6 addr add 2001:db8:1111::10/64 dev eth1
       - ip -6 route add default dev eth1
       
     PC4:
@@ -94,7 +94,7 @@ topology:
       mtu: 1500
     - endpoints: ["PC2:eth1", "srl1:e1-6"]
       mtu: 1500
-    - endpoints: ["PC3:eth1", "srl1:e1-7"]
+    - endpoints: ["PC3:eth1", "srl2:e1-2"]
       mtu: 1500  
     - endpoints: ["PC4:eth1", "srl1:e1-8"]
       mtu: 1500    
