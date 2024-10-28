@@ -5,5 +5,4 @@ alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 SCAN Local Net"; ip_proto:58; ity
 # En el encabezado icmpv6 busca el valor 0 para el campo router lifetime
 alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 Kill Router6"; icmpv6.hdr; content:"|00 00|"; offset:6; depth:2; classtype:policy-violation; sid:1000005; rev:1;) 
 alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 Kill Router6 -FHD"; ipv6.hdr; content:"|01 40|"; offset:4; depth:2; classtype:policy-violation; sid:1000006; rev:1;)
-# En el encabezado ipv6 busca el valor 59 (No Next header) para el campo Next Header
-alert ipv6 any any -> any any (msg:"Potencial data exfiltration via flowlabel field"; ipv6.hdr; content:"|3b|"; offset:6; depth:1; classtype:policy-violation; sid:1000007; rev:1;) 
+alert ipv6 any any -> any any (msg:"Potencial data exfiltration via flowlabel field"; ip_proto:59; classtype:policy-violation; sid:1000007; rev:1;) 
