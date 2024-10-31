@@ -44,7 +44,7 @@ topology:
 
     suricata:
       kind: linux
-      image: docker.io/esanchezv/suricatafilebeatv1:v2
+      image: docker.io/esanchezv/suricatafilebeatv1:v1
       binds:
        - elk/suricata/local.rules:/var/lib/suricata/rules/local.rules
       exec:
