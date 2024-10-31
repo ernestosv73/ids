@@ -7,4 +7,6 @@ alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 Kill Router6"; icmpv6.hdr; conten
 alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 Kill Router6 -FHD"; ipv6.hdr; content:"|01 40|"; offset:4; depth:2; classtype:policy-violation; sid:1000006; rev:1;)
 alert ipv6 $HOME_NET any -> $EXTERNAL_NET any (msg:"Ping6"; ip_proto:58; itype:128; icode:0; classtype:policy-violation; sid:1000007; rev:1;)
 # Data after the 'none' header (59) is suspicious.
-alert ipv6 any any -> any any (msg:"SURICATA data after none (59) header"; decode-event:ipv6.data_after_none_header; classtype:protocol-command-decode; sid:1000008; rev:2;)
+alert ipv6 any any -> any any (msg:"SURICATA data after none (59) header"; decode-event:ipv6.data_after_none_header; classtype:protocol-command-decode; sid:1000008; rev:1;)
+alert ipv6 any any -> any any (msg:"Potencial data exfiltration via flowlabel field"; ipv6.hdr; content:"|3b|"; offset:6; depth:1; classtype:policy-violation; sid:1000009; rev:1;)
+alert ipv6 any any -> any any (msg:"Potencial data exfiltration via flowlabel"; ip_proto:59; classtype:policy-violation; sid:1000010; rev:1;) 
