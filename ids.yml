@@ -85,10 +85,10 @@ topology:
    
           
   links:
-    - endpoints: ["srl2:e1-1", "srl1:e1-9"]
+    - endpoints: ["srl2:e1-1", "srl1:e1-1"]
     - endpoints: ["elastic:eth1", "srl1:e1-2"]
       mtu: 1500
-    - endpoints: ["suricata:eth1", "srl1:e1-7"]
+    - endpoints: ["suricata:eth1", "srl1:e1-9"]
       mtu: 1500
     - endpoints: ["kibana:eth1", "srl1:e1-4"]
       mtu: 1500
