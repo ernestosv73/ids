@@ -21,7 +21,7 @@ topology:
     elastic:
       kind: linux
       mgmt-ipv4: 172.20.20.9
-      image: docker.elastic.co/elasticsearch/elasticsearch:7.17.7
+      image: esanchezv/elasticsearch:latest
       
       env:
         node.name: es01
@@ -35,7 +35,7 @@ topology:
     kibana:
       kind: linux
       mgmt-ipv4: 172.20.20.7
-      image: docker.elastic.co/kibana/kibana:7.17.7
+      image: esanchezv/kibana:latest
       binds:
         - ./elk/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
       
