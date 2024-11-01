@@ -22,11 +22,7 @@ topology:
       kind: linux
       mgmt-ipv4: 172.20.20.9
       image: docker.elastic.co/elasticsearch/elasticsearch:7.17.7
-      exec:
-      - ip -6 route del default dev eth0
-      - "sysctl -w net.ipv6.conf.eth1.accept_ra=0"
-      - ip -6 addr add 2001:db8:aaaa:1::5/64 dev eth1
-      - ip -6 route add default dev eth1
+      
       env:
         node.name: es01
         discovery.type: single-node
@@ -42,11 +38,7 @@ topology:
       image: docker.elastic.co/kibana/kibana:7.17.7
       binds:
         - ./elk/kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
-      exec:
-      - ip -6 route del default dev eth0
-      - "sysctl -w net.ipv6.conf.eth1.accept_ra=0"
-      - ip -6 addr add 2001:db8:aaaa:1::10/64 dev eth1
-      - ip -6 route add default dev eth1  
+      
       ports:
         - 5601:5601/tcp
       #wait-for:
