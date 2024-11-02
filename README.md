@@ -5,9 +5,10 @@ En base al análisis de tráfico de red de ataques comunes y RFCs de referencia,
 
 ## Descripción de la topología
 
-Nokia SR Linux router node connected to another Nokia SR Linux node configured as a switch. Three host nodes are also connected to the switch:
-PC1 and PC2: Kali Linux OS. Image based on kali-rolling with packages net-tools, iproute2, ipv6toolkit and Thc-Ipv6.
-PC3: Alpine Linux with net tools.
+* Nokia SR Linux router node
+* Nokia SR Linux switch node  
+* PC1, PC2: Kali Linux OS. Image based on kali-rolling with packages net-tools, iproute2, ipv6toolkit and Thc-Ipv6.
+* PC3, PC4: Kali Linux OS. 
 
 Nokia SRL Linux Router General Config:
 * Eth1/1.0 IPv6 static global unicast address (2001:db8:aaaa:1::1/64) with Router Advertisement, (advertised prefix: 2001:db8:aaaa:1::/64).
