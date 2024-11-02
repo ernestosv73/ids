@@ -1,6 +1,7 @@
-# IPv6 Security Lab based in Containerlab
-This test laboratory aims to provide a network topology based on Containerlab that allows you to understand the operation of the protocols involved in the IPv6 address autoconfiguration process.
-To mitigate one of the security issues of IPv6 SLAAC, this scenario provides an example of configuring Router Advertisement Guard based on an IPv6 filter ACL.
+# Un entorno virtualizado para prácticas de seguridad y filtros en Redes IPv6 con Containerlab
+Este laboratorio de pruebas tiene como objetivo proporcionar una topología de red basada en Containerlab para el análisis de seguridad del Protocolo IPv6 en el proceso de autoconfiguración de direcciones sin estado (SLAAC). RFC 4862, RFC 7527, RFC 4941.
+
+Para mitigar uno de los problemas de seguridad de IPv6 SLAAC, este escenario proporciona un ejemplo de configuración de Router Advertisement Guard basado en una ACL de filtro IPv6.
 
 
 ## Description
