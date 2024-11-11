@@ -3,7 +3,7 @@ alert ipv6 any any -> any any (msg:"ICMPv6 Flood RA"; ip_proto:58; itype:134; ic
 alert ipv6 any any -> any any (msg:"ICMPv6 Flood MLD RA"; ip_proto:58; itype:151; icode:15; threshold: type both, track by_src, count 100, seconds 3; classtype:policy-violation; sid:1000003; rev:1;)
 alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 SCAN Local Net"; ip_proto:58; itype:128; icode:0; classtype:policy-violation; sid:1000004; rev:1;)
 # En el encabezado icmpv6 busca el valor 0 para el campo router lifetime
-alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 Kill Router6"; icmpv6.hdr; content:"|00 00|"; offset:6; depth:2; classtype:policy-violation; sid:1000005; rev:1;) 
+alert ipv6 any any -> ff02::1 any (msg:"Posible ICMPv6 Kill Router6"; icmpv6.hdr; content:"|00 00|"; offset:6; depth:2; classtype:policy-violation; sid:1000005; rev:1;) 
 # alert ipv6 any any -> ff02::1 any (msg:"ICMPv6 Kill Router6 -H"; ipv6.hdr; content:"|3a|"; offset:40; depth:1; classtype:policy-violation; sid:1000006; rev:1;)
 # Data after the 'none' header (59) is suspicious.
 alert ipv6 any any -> any any (msg:"SURICATA data after none (59) header"; decode-event:ipv6.data_after_none_header; classtype:protocol-command-decode; sid:1000007; rev:1;)
