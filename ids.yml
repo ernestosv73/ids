@@ -83,6 +83,12 @@ topology:
       image: esanchezv/exfil:latest
       exec:
       - ip -6 route del default dev eth0
+
+    PC5:
+      kind: linux
+      image: esanchezv/exfil:latest
+      exec:
+      - ip -6 route del default dev eth0  
       
    
           
@@ -101,4 +107,8 @@ topology:
     - endpoints: ["PC3:eth1", "srl2:e1-2"]
       mtu: 1500  
     - endpoints: ["PC4:eth1", "srl1:e1-8"]
+      mtu: 1500
+    - endpoints: ["PC5:eth1", "srl1:e1-3"]
       mtu: 1500    
+ 
+      
