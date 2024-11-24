@@ -14,7 +14,7 @@ En base al análisis de tráfico de red de ataques comunes y RFCs de referencia,
 
 Nokia SRL Linux Switch General Config:
 * network instance type mac-vrf iname "lanswitch". 
-* Se configuró IPv6 ACL filter "ipv6ra" y se aplicó a los puertos interface ethernet-1/2, 1/3, 1/5, 1/8.  
+* Se configuró IPv6 ACL filter "ipv6ra" y se aplicó a los puertos 1-2, 1-5, 1-8.  
 * Ver detalles en Webinar LACNIC: https://www.lacnic.net/7495/1/lacnic/
 
 ## Vista de la topología
