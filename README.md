@@ -18,7 +18,7 @@ Nokia SRL Linux Switch General Config:
 * Ver detalles en Webinar LACNIC: https://www.lacnic.net/7495/1/lacnic/
 
 ## Vista de la topología
-![Alt text](images/ids topology.drawio.png)
+![Alt text](images/idstopology.png)
 ## Getting Started
 
 ### Dependencies
