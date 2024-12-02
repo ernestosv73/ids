@@ -71,7 +71,7 @@ topology:
     
     PC3:
       kind: linux
-      image: esanchezv/exfil:latest
+      image: docker.io/esanchezv/exfil:latest
       exec:
       - ip -6 route del default dev eth0
       - "sysctl -w net.ipv6.conf.eth1.accept_ra=0"
@@ -80,13 +80,13 @@ topology:
       
     PC4:
       kind: linux
-      image: esanchezv/exfil:latest
+      image: docker.io/esanchezv/exfil:latest
       exec:
       - ip -6 route del default dev eth0
 
     PC5:
       kind: linux
-      image: esanchezv/exfil:latest
+      image: docker.io/esanchezv/exfil:latest
       exec:
       - ip -6 route del default dev eth0  
       
