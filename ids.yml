@@ -86,9 +86,9 @@ topology:
 
     PC5:
       kind: linux
-      image: esanchezv/ndpmon:latest
-      binds:
-       - elk/ndpmon/extras.tgz:/etc/ndpmon/extras.tgz
+      image: docker.io/esanchezv/exfil:latest
+      #binds:
+       #- elk/ndpmon/extras.tgz:/etc/ndpmon/extras.tgz
       exec:
       - ip -6 route del default dev eth0  
       
