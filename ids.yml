@@ -86,10 +86,11 @@ topology:
       
     PC5:
       kind: linux
-      image: docker.io/esanchezv/exfil:latest
+      image: esanchezv/ndpmon2.0:latest
       exec:
       - ip -6 route del default dev eth0
-      
+      binds:
+       - elk/ndpmon/ndpmon-web-interface.tgz:/var/www/html/ndpmon-web-interface.tgz
       
       
    
