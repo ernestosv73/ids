@@ -80,21 +80,16 @@ topology:
       
     PC4:
       kind: linux
-      image: docker.io/esanchezv/kaliipv6v2.1:latest
+      image: docker.io/esanchezv/exfil:latest
       exec:
       - ip -6 route del default dev eth0
-      binds:
-       - elk/ndpmon/ndpmon_2.1.0.tar.gz:/tmp/ndpmon_2.1.0.tar.gz
-
+      
     PC5:
       kind: linux
-      image: esanchezv/ndpmon2:latest
-      binds:
-       - elk/ndpmon/ndpmon_2.1.0.tar.gz:/tmp/ndpmon_2.1.0.tar.gz
+      image: docker.io/esanchezv/exfil:latest
       exec:
       - ip -6 route del default dev eth0
-      ports:
-        - 8080:80/tcp
+      
       
    
           
